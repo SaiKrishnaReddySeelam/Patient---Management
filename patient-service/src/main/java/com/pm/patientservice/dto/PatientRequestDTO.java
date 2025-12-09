@@ -1,5 +1,6 @@
 package com.pm.patientservice.dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +23,7 @@ public class PatientRequestDTO {
     private String dateOfBirth;
 
     @NotNull(message = "Registered date is required")
+    @Column(nullable = false, updatable = false)
     private String registeredDate;
 
     public String getName() {
